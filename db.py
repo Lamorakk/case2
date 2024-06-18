@@ -1,4 +1,5 @@
 import MySQLdb
+import logging
 
 db_config = {
     'user': 'root',
@@ -15,7 +16,7 @@ cursor.execute("CREATE DATABASE IF NOT EXISTS quizik")
 cursor.execute("""
     CREATE TABLE IF NOT EXISTS responses (
         id INT AUTO_INCREMENT PRIMARY KEY,
-        user_id INT,
+        user_id BIGINT,
         username VARCHAR(50),
         name VARCHAR(50),
         surname VARCHAR(50),
